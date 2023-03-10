@@ -17,11 +17,11 @@ public class CarDaoImpl implements CarDao{
     );
 
     @Override
-    public List<Car> getCars(List<Car> carlist, int count) {
+    public List<Car> getCars(int count) {
         if (count >= 5) {
             return carList;
         }
-        return carList.stream().limit(count).collect(Collectors.toList());
+        return carList.stream().limit(count).toList();
     }
 
 
