@@ -27,7 +27,8 @@ public class CarsController extends CarDaoImpl {
 
     @GetMapping
     public String printAllCars(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
-        model.addAttribute("listCars", carService.getCars(count));
+        List<Car> listCars = carService.getCars(carList, count);
+        model.addAttribute("listCars", listCars);
         return "cars";
     }
 
